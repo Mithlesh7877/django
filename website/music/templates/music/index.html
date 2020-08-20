@@ -1,0 +1,14 @@
+{%extends 'music/base.html'%}
+{%block body%}
+{%if all_albums%}
+    <ul>
+        {% for album in all_albums%}
+        <li><a href ='{% url "music:detail" album.id %}'>{{album.album_title}}</a></li>
+        <li><input type="radio" name="list" value="volvo">Volvo <button>delete</button></li>
+        
+        {% endfor %}
+    </ul>
+{%else%}
+    <h3>No albums now</h3>
+{%endif%}
+{%endblock%}
