@@ -1,9 +1,11 @@
-document.getElementById('Text').addEventListener('click',add_element_to_array);
-
-var x =5;
+document.getElementById('Text').addEventListener('click',function() {
+    add_element_to_array(array);
+  })
+let ouptut = document.querySelector('#output');
+var a =5;
 var array = Array();
 (function getText(){
-    fetch('https://randomuser.me/api/?results=10')
+    fetch('https://randomuser.me/api/?results=15')
     .then(res=>{
       return  res.json();
     })
@@ -41,13 +43,33 @@ var array = Array();
 
 // const html=Array();
 function add_element_to_array(array){
+    document.getElementById('output').innerHTML = "";
     console.log(array);
-    // for (var i =0;i<x;i++){
-    //    const html= `<h4>Name: ${array[i].name.first}</h4>
-    //    <p><img src ='${array[i].picture.large}' alt='${array[i].name.firtst}'></p>`
-    //             console.log(html);
-    //             document.getElementById('output').innerHTML+=html;           
-    // }
-    i=x;
-    x=x+5;
+    if(a==5){
+    for (let i=0;i<a;i++){
+        let html= `<h4>Name: ${array[i].name.first}</h4>
+       <p><img src ='${array[i].picture.large}' alt='${array[i].name.firtst}'></p>`
+                console.log(html);
+                document.getElementById('output').innerHTML+=html;                  
+    }
+    a=a+5;
+    }
+    else if(a==10){
+        for (let i=5;i<a;i++){
+            let html= `<h4>Name: ${array[i].name.first}</h4>
+           <p><img src ='${array[i].picture.large}' alt='${array[i].name.firtst}'></p>`
+                    console.log(html);
+                    document.getElementById('output').innerHTML+=html;
+        }
+        a=a+5;
+    }
+    else{
+        for (let i=10;i<a;i++){
+            let html= `<h4>Name: ${array[i].name.first}</h4>
+           <p><img src ='${array[i].picture.large}' alt='${array[i].name.firtst}'></p>`
+                    console.log(html);
+                    document.getElementById('output').innerHTML+=html;
+
+       }
+    }
 }
