@@ -73,3 +73,32 @@ function add_element_to_array(array){
        }
     }
 }
+
+
+
+
+// Pattern
+var start=0;
+var even=50;
+var odd=51;
+var end=100;
+var x=0;
+function test(){
+    console.log(start);
+    console.log(start+1);
+    m=(x%2==0)?even:odd;
+    console.log(m);
+    (m==even)?even--:odd++;
+    console.log(end-1);
+    console.log(end);
+    start += 2;
+    end   -= 2;
+    x     += 1;
+}
+
+
+// 0 1 50 99 100 
+// 2 3 51 97 98 
+// 4 5 49 95 96
+// 6 7 52 93 94
+// 8 9 48 91 92
